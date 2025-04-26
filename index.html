@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>直接请求示例</title>
+</head>
+<body id="result">
+<script>
+  async function fetchData() {
+    try {
+      const response = await fetch('https://speed-fast.jia612516-ddd.workers.dev/CET4_202412_326011242102816_1_MINI', {
+        method: 'GET',
+      });
+
+      if (!response.ok) throw new Error('请求失败');
+      document.querySelector('#result').innerHTML = await response.text();
+    } catch (error) {
+    }
+  }
+  fetchData()
+</script>
+</body>
+</html>
